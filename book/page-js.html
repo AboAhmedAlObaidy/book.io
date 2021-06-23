@@ -1,0 +1,38 @@
+<script>
+
+ document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+
+document.getElementById("btn").addEventListener("click", doStuff);
+
+function doStuff() {
+
+var Info ={};
+
+Info.nameschool = document.getElementById("ns").value;
+Info.codeschool = document.getElementById("code").value;
+Info.linkschool = document.getElementById("link").value;
+Info.emailschool = document.getElementById("email").value;
+Info.app = document.getElementById("app").value;
+Info.appindex = document.getElementById("app").selectedIndex;
+Info.password = document.getElementById("password").value;
+Info.check = document.getElementById("check").value;
+Info.case="create";
+
+
+
+google.script.run.userClicked(Info);
+document.getElementById("ns"). value ="";
+document.getElementById("code").value ="";
+document.getElementById("link").value ="";
+document.getElementById("email").value ="";
+var MyApp=document.getElementById("app");
+document.getElementById("password").value ="";
+document.getElementById("check").value="لا";
+MyApp.selectedIndex =0;
+M.FormSelect.init(MyApp);
+}
+
+</script>
